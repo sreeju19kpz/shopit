@@ -15,6 +15,8 @@ class AppTheme {
     ),
     brightness: Brightness.light,
     appBarTheme: AppBarTheme(backgroundColor: AppColors.transparent),
+    useMaterial3: true,
+    textTheme: TextTheme().apply(bodyColor: AppColors.darkBackground),
   );
 
   static final darkTheme = ThemeData(
@@ -30,5 +32,7 @@ class AppTheme {
     ),
     brightness: Brightness.dark,
     appBarTheme: AppBarTheme(backgroundColor: AppColors.transparent),
+    useMaterial3: true,
+    textTheme: TextTheme().apply(bodyColor: AppColors.lightBackground),
   );
 }
