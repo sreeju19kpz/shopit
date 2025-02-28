@@ -84,7 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         Spacer(),
-                        RippleButton(onPress: onPress, title: "G"),
+                        RippleButton(
+                          onPress: onPress,
+                          child: Center(child: Text("G")),
+                        ),
                         Spacer(),
                       ],
                     ),

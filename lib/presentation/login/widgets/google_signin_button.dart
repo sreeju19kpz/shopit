@@ -42,6 +42,6 @@ class _GoogleSigninButtonState extends State<GoogleSigninButton> {
 
   @override
   Widget build(BuildContext context) {
-    return RippleButton(onPress: onPress, title: "G");
+    return RippleButton(onPress: onPress, child: Center(child: Text("G")));
   }
 }

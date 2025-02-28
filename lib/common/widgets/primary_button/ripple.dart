@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shopit/core/configs/theme/app_colors.dart';
 
 class RippleButton extends StatelessWidget {
   final double? height;
   final double? width;
   final double borderWidth;
-  final String title;
+  final Color borderColor;
+  final Widget child;
   final VoidCallback onPress;
-  final BorderRadiusGeometry? borderRadius = BorderRadius.circular(9999);
+  final BorderRadiusGeometry? borderRadius;
 
   RippleButton({
     required this.onPress,
@@ -14,9 +16,11 @@ class RippleButton extends StatelessWidget {
     this.width = 35,
     this.borderWidth = 1,
     BorderRadius? borderRadius,
-    required this.title,
+    Color? borderColor,
+    required this.child,
     super.key,
-  });
+  }) : borderRadius = borderRadius ?? BorderRadius.circular(9999),
+       borderColor = borderColor ?? Colors.black.withAlpha(20);
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +29,14 @@ class RippleButton extends StatelessWidget {
       height: width,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black.withAlpha(20),
-            width: borderWidth,
-          ),
+          border: Border.all(color: borderColor, width: borderWidth),
           borderRadius: borderRadius ?? BorderRadius.circular(9999),
         ),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Material(
-          borderRadius: BorderRadius.circular(9999),
-          child: InkWell(
-            onTap: onPress,
-            borderRadius: BorderRadius.circular(9999),
-            child: Center(child: Text(title)),
-          ),
+          elevation: 0,
+          color: AppColors.transparent,
+          child: InkWell(onTap: onPress, child: child),
         ),
       ),
     );
