@@ -19,7 +19,10 @@ class BottomTabBar extends StatelessWidget {
                   (destination) => NavigationDestination(
                     icon: Icon(destination.icon),
                     label: destination.label,
-                    selectedIcon: Icon(destination.icon, color: Colors.amber),
+                    selectedIcon: Icon(
+                      destination.selectedIcon,
+                      color: Colors.amber,
+                    ),
                   ),
                 )
                 .toList(),

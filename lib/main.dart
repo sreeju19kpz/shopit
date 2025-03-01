@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopit/common/widgets/bottom_tab/bottom_tab.dart';
 import 'package:shopit/core/configs/theme/app_screens.dart';
 import 'package:shopit/core/configs/theme/app_theme.dart';
+import 'package:shopit/presentation/explore/screen/explore.dart';
 import 'package:shopit/presentation/home/pages/home.dart';
 import 'package:shopit/presentation/intro/pages/intro.dart';
 import 'package:shopit/presentation/login/page/login.dart';
@@ -46,7 +47,7 @@ final GoRouter _router = GoRouter(
           routes: [
             GoRoute(
               path: AppScreens.exploreScreen,
-              builder: (context, state) => HomePage(),
+              builder: (context, state) => ExploreScreen(),
             ),
           ],
         ),
